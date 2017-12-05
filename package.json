@@ -1,0 +1,10 @@
+{
+  "name": "restApi",
+  "version": "0.0.1",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "mongoose": "^4.9.4",
+    "node-restful": "^0.2.6"
+  }
+}
