@@ -12,6 +12,9 @@ app.use(cors())
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+
+
+
 //Import Routes
 const employeeRoutes = require('./routes/employeeRoute');
 
@@ -20,17 +23,21 @@ app.use('/employee',employeeRoutes);
 
 
 
+
+
+
+
+
+
+
+
 app.get('/',(req,res)=>{
 	 res.send("we are on home");
 });
-
-
 // mongoose
 mongoose.connect("mongodb://localhost:27017/RestApi" ,()=>{
 	console.log("Db connected");
 });
-
-
 
 // Start Server
 app.listen(9000,function(){
