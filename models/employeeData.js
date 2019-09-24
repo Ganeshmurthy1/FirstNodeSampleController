@@ -1,15 +1,13 @@
 // Dependencies
 
-var restful = require('node-restful');
-var mongoose = restful.mongoose;
+const mongoose = require('mongoose');
 
 //Schema
 var Schema = mongoose.Schema;
-var employeeSchema = new Schema({
-    "userid":Number,
+var employeeSchema = new Schema({   
 	"name": String,
 	"age": Number,
-	"design" : String
+	"designation" : String
 })
 // Return Model
-module.exports = restful.model('users',employeeSchema);
+module.exports = mongoose.model('users',employeeSchema);

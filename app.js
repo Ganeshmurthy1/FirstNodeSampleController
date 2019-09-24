@@ -1,18 +1,36 @@
 // Dependencies
-var express = require("express");
-var mongoose = require("mongoose");
-var bodyParser = require("body-parser");
+const express = require("express");
+const mongoose = require("mongoose");
+const bodyParser = require("body-parser");
+const cors = require('cors')
+const app = express();
 
-// mongoose
-mongoose.connect("mongodb://localhost:27017/RestApi");
 
 // express
-var app = express();
+
+app.use(cors())
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+//Import Routes
+const employeeRoutes = require('./routes/employeeRoute');
+
 // Routes
-app.use('/api',require('./controller/api'));
+app.use('/employee',employeeRoutes);
+
+
+
+app.get('/',(req,res)=>{
+	 res.send("we are on home");
+});
+
+
+// mongoose
+mongoose.connect("mongodb://localhost:27017/RestApi" ,()=>{
+	console.log("Db connected");
+});
+
+
 
 // Start Server
 app.listen(9000,function(){
