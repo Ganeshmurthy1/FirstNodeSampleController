@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const cors = require('cors')
 const app = express();
-
+const api = require('./routes/routeIndex')
 
 // express
 
@@ -15,13 +15,14 @@ app.use(bodyParser.json());
 
 
 
-//Import Routes
-const employeeRoutes = require('./routes/employeeRoute');
+// //Import Routes
+ //const employeeRoutes = require('./routes/employeeRoute');
+
+ // Routes
+//app.use('/employee',employeeRoutes);
 
 // Routes
-app.use('/employee',employeeRoutes);
-
-
+ app.use('/api',api);
 
 
 

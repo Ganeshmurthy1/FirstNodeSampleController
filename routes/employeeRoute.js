@@ -7,7 +7,6 @@ const router = express.Router();
 const EmployeeDetails = require('../models/employeeData');
 
 //Routes
-
 router.get('/',(req,res,next) => {
     EmployeeDetails.find({},(err,obj)=> {
         if(err){
@@ -38,7 +37,6 @@ router.post('/',(req,res,next) => {
 router.delete('/',(req,res,next) => {
     console.log("reqbody",req.body);
     console.log("reqparam",req.params);
-debugger;
     
     EmployeeDetails.findByIdAndRemove({_id : req.body.id},function(err,docs){
         if(err)
